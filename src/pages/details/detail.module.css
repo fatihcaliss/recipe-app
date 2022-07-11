@@ -1,0 +1,48 @@
+.details {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+}
+
+img {
+    width: 400px;
+    display: block;
+}
+
+.nutrients {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.recipe{
+    width: 300px;
+}
+.besin{
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    margin: 1rem;
+}
+
+.recipe ol{
+    list-style-type:decimal;
+    list-style-position: outside;
+
+}
+
+ol > li::marker {
+    font-weight: bold;
+}
+.detail-header{
+    border-bottom: 5px solid #3F3D56;
+}
+
+@media (max-width:1000px) {
+    .details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
