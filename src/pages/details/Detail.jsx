@@ -10,7 +10,7 @@ const Detail = () => {
             <h1 className={detailstyle['detail-header']}>{label}</h1>
             <div className={detailstyle["details"]}>
                 <div>
-                    <img src={state.recipe.image} alt={state.recipe.label} />
+                    <img src={state.recipe.image} alt={state.recipe.label}/>
                 </div>
 
                 <div className={detailstyle["nutrients"]}>
