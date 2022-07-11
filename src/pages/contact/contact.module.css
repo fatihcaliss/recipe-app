@@ -1,0 +1,12 @@
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    margin: 3rem;
+    transition: 1s;
+}
+.icon:hover{
+    transform: scale(1.2);
+}

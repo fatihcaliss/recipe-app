@@ -15,7 +15,7 @@ div {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    width: 300px;
+    width: fit-content;
 
 }
 
@@ -25,6 +25,16 @@ div {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    text-decoration: none;
+}
+
+.nav li a{
+    text-decoration: none;
+    color: black;
+    transition: 1s;
+}
+.nav li a:hover{
+    transform: scale(1.1);
 }
 
 h1 {
