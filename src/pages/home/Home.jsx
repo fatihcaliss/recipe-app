@@ -16,6 +16,7 @@ const Home = () => {
         e.preventDefault();
         setload(true);
         getData();
+        setQuery("");
     }
 
     const getData = async () => {
