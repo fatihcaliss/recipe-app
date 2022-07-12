@@ -8,6 +8,7 @@ const Home = () => {
     const [query, setQuery] = useState('chicken');
     const [recipes, setRecipes] = useState([]);
     const [load, setload] = useState(true);
+    const [notFound, setNotFound] = useState(false);
 
     const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=ed99248f&app_key=4279feb2af5abb9df1792b374ee3b76f&mealType=${meal}`
 
@@ -22,8 +23,9 @@ const Home = () => {
             const { data } = await axios.get(url)
             setRecipes(data.hits);
             setload(false);
+            data.hits.length === 0 ? setNotFound(true) : setNotFound(false);
         } catch (error) {
-            console.log("asdasd");
+            console.log("error");
         }
     }
     useEffect(() => {
@@ -44,7 +46,8 @@ const Home = () => {
                 <button>Search</button>
             </form>
             <div className='items'>
-                {load ? <h1>Loading..</h1> : recipes.map((item,i) => (<RecipeCard key={i} recipe={item.recipe}/>))}
+                {load ? <h1>Loading..</h1> : notFound ? <h1>Recipe Not Found..</h1> :
+                recipes.map((item,i) => (<RecipeCard key={i} recipe={item.recipe}/>))}
             </div>
             
         </>

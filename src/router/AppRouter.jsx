@@ -6,6 +6,7 @@ import Home from "../pages/home/Home";
 import About from '../pages/about/About';
 import Contact from '../pages/contact/Contact';
 import Details from "../pages/details/Detail";
+import Error from '../pages/error/Error';
 
 const AppRouter = () => {
     return (
@@ -28,7 +29,7 @@ const AppRouter = () => {
                     <Route path='/contact' element={<Contact />} />
                 </Route>
 
-                <Route path='/' element={<Login />} />
+                <Route path="*" element={<Error/>}/>
             </Routes>
         </BrowserRouter>
     )
