@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react'
 import RecipeCard from "./RecipeCard";
 import axios from 'axios';
 import "./home.css";
+const API_ID =process.env.REACT_APP_API_ID;
+const API_KEY =process.env.REACT_APP_API_KEY;
 
 const Home = () => {
     const [meal, setMeal] = useState('breakfast');
@@ -9,8 +11,9 @@ const Home = () => {
     const [recipes, setRecipes] = useState([]);
     const [load, setload] = useState(true);
     const [notFound, setNotFound] = useState(false);
-
-    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=ed99248f&app_key=4279feb2af5abb9df1792b374ee3b76f&mealType=${meal}`
+    console.log(API_KEY);
+    console.log(API_ID);
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${API_ID}&app_key=${API_KEY}&mealType=${meal}`
 
     const handleSubmit = (e) => {
         e.preventDefault();
